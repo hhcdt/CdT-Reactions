@@ -1,0 +1,33 @@
+{
+  "name": "CdT Reactions",
+  "short_name": "CdT Reactions",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Converts Facebook Reactions into common meme reactions of the CdT FB Community.",
+  "homepage_url": "http://www.facebook.com",
+  "default_locale": "en",
+  "icons": {
+    "16": "img/icon16.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
+  "permissions": [
+    "*://*.facebook.com/*",
+    "activeTab",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.facebook.com/*"
+      ],
+      "js": [
+        "jquery-2.2.2.min.js", "src/inject/inject.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "img/*.png",
+    "content_script/replace-reactions.css"
+  ]
+}
